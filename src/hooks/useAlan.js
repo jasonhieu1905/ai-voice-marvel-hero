@@ -5,12 +5,8 @@ import { useCart } from "../context/Cart-Context";
 function useAlan() {
   const [alanBtnInstance, setAlanBtnInstance] = useState(null);
   const {
-    cart,
-    showCartItems,
     setShowCartItems,
     getImageBySuperHero,
-    showCart,
-    removeFromCart,
     addToCart,
   } = useCart();
 
@@ -32,11 +28,11 @@ function useAlan() {
               break;
             case "add-item":
               const payload = commandData.payload;
-              console.log(payload);
               const { name, quantity } = payload;
               const image = getImageBySuperHero(name);  
               addToCart(name, image, quantity);
               setShowCartItems(true);
+              break;
             default:
               break;
           }
