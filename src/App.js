@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container } from "@material-ui/core";
+import CardList from "./components/CardList/CardList";
+import Cart from "./components/Cart/Cart";
+import useAlan from "./hooks/useAlan";
 
 function App() {
+  useAlan();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="md" style={{paddingTop: '30px'}}>
+      <Cart />
+      <CardList />
+    </Container>
   );
 }
 
